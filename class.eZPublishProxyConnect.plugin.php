@@ -15,5 +15,18 @@ $PluginInfo['EZPublishProxyConnect'] = array( // The plugin key must match the f
 );
 
 class EZPublishProxyConnectPlugin extends Gdn_Plugin {
-	
+	public function Setup() {
+		//add our authenticator class to the list 
+		$EnabledSchemes = Gdn::Config('Garden.Authenticator.EnabledSchemes', array());
+		array_push($EnabledSchemes, 'ez');
+		SaveToConfig('Garden.Authenticator.EnabledSchemes', $EnabledSchemes);
+		SaveToConfig('Plugins.EZ_auth.Enable', TRUE);
+	}
+   
+	public function OnDisable() {
+		Gdn::Authenticator()->DisableAuthenticationScheme('ez');
+		
+		RemoveFromConfig('Garden.Authenticators.proxy.Name');
+	}
+
 }
