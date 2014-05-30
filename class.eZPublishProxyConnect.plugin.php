@@ -9,7 +9,7 @@ $PluginInfo['EZPublishProxyConnect'] = array( // The plugin key must match the f
    //'RequiredTheme' => array('ThemeKey' => MinVersion),
    //'RequiredPlugins' => array('PluginKey' => MinVersion),
    'HasLocale' => FALSE,
-   'Author' => 'Jérome Vielledent',
+   'Author' => 'Jérome Vieilledent',
    //'AuthorEmail' => 'Your email here', // optional
    //'AuthorUrl' => 'Your url here' // optional
 );
